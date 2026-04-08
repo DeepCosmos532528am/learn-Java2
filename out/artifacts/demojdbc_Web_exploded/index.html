@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<h1 style="font-family: 'Arial Rounded MT Bold'; font-style: italic; font-size: larger">Hello</h1>
+<form method="Post" action="mycustomServlet3"> <!--Hum sirf <form> se hi Get or Post dono ko issue kar sakte h-->
+
+    <a href="mycustomServlet3">Navigate to the myCustom3 page</a>
+    <!--Get pe toh Get de-dega lekin abhi Post diya h, lekin <a></a> tag hamesha Get request hi issue karta h by-default ,toh MyCustomServlet3 me getMethod() Post dene ke baad bhi, Get hi dega, not Post, kyuki broswer hi reject maar dega! bolega sir <a> tag se Get hi issue ho sakti h not Post!  -->
+    <input type="submit">
+    <!--Submit dabaoge toh form se request jayegi aur form me hamne method=Post diya h toh getMethod() Post dega, aur yadi link pe click karenge toh Get method aayega kyuki request kisne trigger kari h, kya request trigger akri h aur kis servlet tak kari h teeno matter karte h -->
+
+</form>
+</body>
+</html>
