@@ -48,6 +48,9 @@ class Demo {
         void innerClass2() {
             demo2(); // Accessing outer class method directly
         }
+        void sayHello(){
+            System.out.println("Hello Sir!");
+        }
     }
 }
 
@@ -92,6 +95,9 @@ public class inheritanceInOuterInnerClasses {
          */
         Demo.InnerClass di = d.new InnerClass();
         di.innerClassMeth();
+
+        Demo.InnerClass2 dii = d.new InnerClass2();
+        dii.sayHello();
 
         // This works because InnerClass EXTENDS Demo.
         // It's calling the inherited version of outerClass().
