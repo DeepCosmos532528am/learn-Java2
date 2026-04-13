@@ -40,7 +40,7 @@ class GenericContainer1 {
 
 
 //Isme "Left vs Right" Kaise Kaam Karta Hai?
-//Definition (Left-ish): Jab aap method define karte ho, toh <T> bata raha hai ki "Main kisi bhi type ka data lene ko taiyaar hoon."
+//Definition (Left-ish): Jab aap method define karte ho, toh <T> bata raha hai ki "ArrayList kisi bhi type ka data lene ko taiyaar hoon."
 //
 //Invocation (Right-ish): Jab aap method ko call karte ho (e.g., printArray(stringArray)), toh Java automatically samajh jata hai ki T yahan String hai. Isse Type Inference kehte hain.
 
