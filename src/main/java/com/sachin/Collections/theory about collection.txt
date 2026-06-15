@@ -1,0 +1,91 @@
+The for-each loop only works if Java knows how to iterate over something.
+
+It knows this in two cases:
+
+Arrays → built-in support
+Classes implementing Iterable → via iterator() method
+
+🧾 Final takeaway
+Primitives ❌ not iterable
+Arrays ✅ iterable (special support)
+Custom objects ❌ unless they implement Iterable
+Iterable = a contract that tells Java how to loop over elements
+
+Now Que comes why not by def every class is iterable!
+🧠 One-line answer
+
+Java doesn’t make every class iterable because not every object is a collection, and Iterable is only for things that logically contain multiple elements.
+Lets say a class "class Car{...}", here what would you loop over, it's not the collection, that is why!!
+
+Now next as its hierarchy:
+Iterable
+   ↓
+Collection
+   ↓
+(List, Set, Queue, etc.)
+
+🔹 What Collection adds over Iterable(collection is the interface of java.util package )
+While Iterable only gives:
+
+
+iterator() → ability to loop
+
+
+The Collection interface adds:
+
+
+add() → insert elements
+
+
+remove() → delete elements
+
+
+size() → number of elements
+
+
+contains() → check presence
+
+
+👉 So Collection is where real data structure behavior starts.
+
+🔹 After Collection:
+From Collection, more specific interfaces come:
+List → ordered collection (e.g., ArrayList)
+Set → no duplicates (e.g., HashSet)
+Queue → processing order (e.g., PriorityQueue)
+(All part of the Java Collections Framework)
+
+🔑 Final takeaway:
+Iterable = “you can loop”
+Collection = “you can store and manage a group of elements”
+So, Collection comes right after Iterable and builds the foundation for all major data structures in Java.
+
+-------------------------------------------------------------
+📘 Notes on the List interface
+🔹 Definition
+
+The List interface is a part of the Java Collections Framework that represents an ordered collection of elements.
+
+It allows duplicate elements and maintains insertion order.
+
+🔹 Key Characteristics
+✅ Ordered → elements are stored in sequence
+✅ Allows duplicates → same value can appear multiple times
+✅ Index-based access → each element has a position (0, 1, 2, …)
+✅ Dynamic size → grows or shrinks automatically
+
+🔹 Common Implementing Classes
+ArrayList → fast access, slower insert/delete in middle
+LinkedList → faster insert/delete, slower access
+Vector → legacy, thread-safe (rarely used now)
+stack
+
+🔹 Important Methods
+add(E e)          // add element
+add(int index, E e)
+get(int index)    // access element
+set(int index, E e) // replace element
+remove(int index)
+size()            // number of elements
+contains(Object o)
+

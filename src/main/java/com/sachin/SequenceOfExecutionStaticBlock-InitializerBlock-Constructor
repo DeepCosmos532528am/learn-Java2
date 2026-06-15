@@ -1,0 +1,69 @@
+🔹 Execution Order
+Class load hone par
+
+   1. Static variables initialize hote hain
+
+   2. Static blocks execute hote hain (sirf ek baar, jab class load hoti hai)
+
+Object create hone par
+
+   1. Instance variables initialize hote hain (agar declaration ke time value di gayi ho to wo set hoti hai)
+
+   2. Instance initializer blocks execute hote hain (har object ke liye)
+
+   3. Constructor run hota hai (final setup ke liye)
+
+   class Demo {
+       static {
+           System.out.println("Static block");
+       }
+
+       {
+           System.out.println("Instance initializer block");
+       }
+
+       Demo() {
+           System.out.println("Constructor");
+       }
+
+       public static void main(String[] args) {
+           new Demo();
+           new Demo();
+       }
+   }
+Static block
+Instance initializer block
+Constructor
+Instance initializer block
+Constructor
+
+👉 Notice karo:
+Static block sirf ek baar chala (class load hone par).
+Har object ke liye pehle instance initializer block chala, phir constructor.
+------------------------------------------------------------------------
+As we know that whether it is static final variable;(static variables -They are always available at the class load time only).
+Or final variable; (non static variable will be available at the time of the object creation not at the static time or class load time).
+So these both static and non-static have different checkpoints to initialize them.
+
+Static final → initialize kar sakte ho:
+a. declaration ke time
+b. static initializer block
+
+Instance final (non‑static) → initialize kar sakte ho:
+a. declaration ke time
+b. instance initializer block
+c. constructor
+
+
+Accha suno inhe JVM initialize nahi karta default values se, final keyword walo ko JVM touch nahi karta default values dene ke liye,
+becuase agar de diya toh firr wo default ka hi hoke reh jayega, kyuki wo final h, so jo pehle de diya wahi
+-------------------------------------------------------------------------
+
+dekho static states ko hum non static methods me use kar sakte h,
+but non static state ko static methods me nahi
+
+static states ko static method me use kar sakte h, kyuki value available bhi h aur determined bhi h, koi dogla ya teegla pan nahi h ki har instance ka apna value nahi h , ek hi value h isliye. Lekin ab
+kyuki yaar static method pehle aata h usko ussi time pe variables chahiye aur abhi tak nonstatic ke kaaran states load nahi huyi toh method ab kya hi dikhade!! aur agar dikhaye bhi toh kese , kyuki har instance ki apni value initilaization ho sakti h toh static method ko kese pata hoga kya value dikhani h aur konse stance ki dikhani h isliye nonstatic state static method me use nahi ho sakti
+
+
+
