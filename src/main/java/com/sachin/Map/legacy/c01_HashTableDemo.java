@@ -27,43 +27,6 @@ public class c01_HashTableDemo {
         username.remove(99);
         System.out.println(username.entrySet());
 
-//For Hashtable which is Concurrent...
-        Thread t1 = new Thread(()-> {
-           for(int i = 0; i<1000; i++){
-               username.put(i,"Thread1");
-           }
-        });
-
-        Thread t2 = new Thread(()-> {
-            for(int i = 1000; i<2000; i++){
-                username.put(i,"Thread2");
-            }
-        });
-
-        t1.run();
-        t2.run();
-        System.out.println(username.entrySet());
-        System.out.println(username.size());
-
-//        For HashMap which is not thread safe(Non-concurrent)
-
-
-        Thread t3 = new Thread(()-> {
-            for(int i = 0; i<1000; i++){
-                users.put(i,"Thread1");
-            }
-        });
-
-        Thread t4 = new Thread(()-> {
-            for(int i = 1000; i<2000; i++){
-                users.put(i,"Thread2");
-            }
-        });
-
-        t3.run();
-        t4.run();
-        System.out.println(users.entrySet());
-        System.out.println(users.size());
 
     }
 }
