@@ -138,5 +138,20 @@ class ClassLoadersDemo {
                 -> Returns the ClassLoader that loaded the class.
                 -> Does not load or initialize anything.
         */
+
+        Something s = new Something();
+        System.out.println(s.c);
+      s.demo();
     }
 }
+
+
+class Something{
+    char c ;
+void demo(){
+    int a ;
+    System.out.println("Sachin" +c);
+
+}
+}
+
