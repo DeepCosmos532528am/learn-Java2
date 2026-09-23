@@ -1,15 +1,26 @@
 package com.sachin.Encapsulation;
 
-class BankAccount {
+class Naman {
     // 1. Data Hiding: Koi bahar se balance ko direct nahi chhed sakta
     private double balance = 100000;
-
+    private  String customerName = "Naman";
     // 2. Controlled Access: Sirf is method ke through balance dekh sakte ho
     public String getBalance(String pin) {
         if (pin.equals("1234")) {
             return "Your Balance: " + balance;
         }
         return "Wrong PIN! Access Denied.";
+    }
+
+    public void setCustomerName(String customerName, String pin) {
+        if (pin.equals("1234")) {
+            this.customerName = customerName;
+        }
+
+    }
+
+    public String getCustomerName() {
+      return this.customerName;
     }
 
     // 3. Validation Magic: Negative value ya faltu update prevent karna
@@ -26,12 +37,20 @@ class BankAccount {
 
 public class Encapsulation {
     public static void main(String[] args) {
-        BankAccount myAcc = new BankAccount();
+        Naman myAcc = new Naman();
         myAcc.deposit(3000);
 //       myAcc.balance = -500; // YE ERROR DEGA (Direct access blocked!)
 //        System.out.println(myAcc.balance); // YE ERROR DEGA (Direct access blocked!)
         myAcc.deposit(5000); // Sahi tarika
-        System.out.println(myAcc.getBalance("1234")); // Rules ke saath access
+//        System.out.println(myAcc.getBalance("1234")); // Rules ke saath access
+
+
+
+     myAcc.setCustomerName("Krishna Sharma", "1234");
+        System.out.println(myAcc.getCustomerName());
+
+
+
     }
 }
 /*
@@ -46,7 +65,7 @@ public class Encapsulation {
  *
  * 2. **Hiding (The Shield)**: `private` keyword use karke data ko bahar se invisible kar dena.
  *    - **Java Example**:
- *    class BankAccount {
+ *    class Naman {
  *        private double balance = 1000; // Bahar se access nahi ho sakta
  *        public double getBalance() { return balance; } // Sirf yahan se dikhega
  *    }
