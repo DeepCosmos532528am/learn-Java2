@@ -54,7 +54,7 @@ public class DemoClass {
     }
 }
 
-class Demo1{
+class Demo1 {
     static void main(String[] args) {
         DemoClass2 d2 = new DemoClass2();
         DemoClass2.InnerDemo2 id2 = new DemoClass2.InnerDemo2();
@@ -74,13 +74,14 @@ class Demo1{
 
 class DemoClass2 {
 
-  static class InnerDemo2{
-         static int i = 0;
+    static class InnerDemo2 {
+        static int i = 0;
 
-        void increaseCount(){
+        void increaseCount() {
             this.i++;
         }
-        void showCount(){
+
+        void showCount() {
             System.out.println(this.i);
         }
 
